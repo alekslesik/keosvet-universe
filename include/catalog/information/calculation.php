@@ -5,6 +5,5 @@
                 Светотехнический расчет
             </div>
             <div class="catalog-information-item-description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit et consectetur excepturi voluptas, sequi doloremque ducimus in, eligendi exercitationem ipsum aspernatur hic at quis quaerat nihil. Ullam, repudiandae officiis.
-        </div>
+            Светотехнический расчет является важным этапом при создании освещения в различных сферах, включая офисные помещения, торговые залы, промышленные объекты, уличное освещение, спортивные сооружения и другие. Качественный светотехнический расчет позволяет создать оптимальные условия освещения, повысить эффективность работы и обеспечить комфортную и безопасную среду для пребывания людей.        </div>
 </div>

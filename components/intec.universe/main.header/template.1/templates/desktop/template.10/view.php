@@ -53,7 +53,8 @@ $arVisual = $arResult['VISUAL'];
                                     'intec-ui-picture'
                                 ],
                                 'style' => [
-                                    'width' => $arResult['LOGOTYPE']['DESKTOP']['WIDTH'].'px'
+                                    // 'width' => $arResult['LOGOTYPE']['DESKTOP']['WIDTH'].'px'
+                                    'width' => '200'.'px'
                                 ]
                             ]) ?>
                                 <?php include(__DIR__.'/../../../parts/logotype.php') ?>

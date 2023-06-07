@@ -5,6 +5,6 @@
                 Светотехнический расчет
             </div>
             <div class="catalog-information-item-description">
-              Illi enim inter se dissentiunt. Aliter enim explicari, quod quaeritur, non potest. Compensabatur, inquit, cum summis doloribus laetitia. Inde igitur, inquit, ordiendum est. Res enim concurrent contrariae. Neutrum vero, inquit ille. Ita prorsus, inquam; 
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur fugit et consectetur excepturi voluptas, sequi doloremque ducimus in, eligendi exercitationem ipsum aspernatur hic at quis quaerat nihil. Ullam, repudiandae officiis.
         </div>
 </div>

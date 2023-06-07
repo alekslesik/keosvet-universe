@@ -127,7 +127,7 @@ use intec\core\helpers\Html;
                         include(__DIR__ . '/shares.php');
                     } ?>
                     <?php if ($arResult['SIZES']['SHOW'])
-                        include(__DIR__.'/sizes.php');
+                        // include(__DIR__.'/sizes.php');
                     ?>
                     <?php if (!empty($arResult['OFFERS']) && $arResult['SKU']['VIEW'] === 'dynamic')
                         include(__DIR__.'/offers.php');

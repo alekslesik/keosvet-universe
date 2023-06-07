@@ -63,7 +63,7 @@ $arVisual = $arResult['VISUAL'];
                     <?php } ?>
                     <?php if ($arResult['TAGLINE']['SHOW']['DESKTOP']) { ?>
                         <div class="widget-tag-line-container intec-grid-item-auto">
-                            <div class="widget-tag-line">
+                            <div class="widget-tag-line" hidden>
                                 <?= $arResult['TAGLINE']['VALUE'] ?>
                             </div>
                         </div>

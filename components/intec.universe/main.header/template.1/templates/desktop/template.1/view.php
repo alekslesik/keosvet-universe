@@ -287,7 +287,8 @@ if ($arResult['CONTACTS']['SHOW']) {
                                         'intec-ui-picture' => true
                                     ], true),
                                     'style' => [
-                                        'width' => $arResult['LOGOTYPE']['DESKTOP']['WIDTH'].'px'
+                                        // 'width' => $arResult['LOGOTYPE']['DESKTOP']['WIDTH'].'px'
+                                        'width' => '190'.'px'
                                     ]
                                 ]) ?>
                                     <?php include(__DIR__.'/../../../parts/logotype.php') ?>
@@ -295,7 +296,7 @@ if ($arResult['CONTACTS']['SHOW']) {
                             </div>
                         <?php } ?>
                         <?php if ($arResult['TAGLINE']['SHOW']['DESKTOP']) { ?>
-                            <div class="widget-container-tagline-wrap intec-grid-item-auto">
+                            <div class="widget-container-tagline-wrap intec-grid-item-auto" style="display: none;">
                                 <div class="widget-container-item widget-container-tagline">
                                     <?php if ($arResult['LOGOTYPE']['SHOW']['DESKTOP']) { ?>
                                         <div class="widget-container-tagline-delimiter"></div>

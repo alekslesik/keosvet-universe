@@ -11686,11 +11686,17 @@ input {
 .intec-grid > .intec-grid-order-last {
   order: 11;
 }
-
+/* 
 .intec-grid.intec-grid-a-h-start {
   -webkit-box-pack: start !important;
   -ms-flex-pack: start !important;
   justify-content: flex-start !important;
+} */
+
+.intec-grid.intec-grid-a-h-start {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
 }
 
 .intec-grid.intec-grid-a-h-end {

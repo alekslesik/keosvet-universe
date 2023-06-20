@@ -26,10 +26,10 @@ if (empty($arResult['OBJECTIVE']))
 <div class="project-section project-section-objective">
     <div class="intec-content">
         <div class="intec-content-wrapper">
-            <div class="project-section-title intec-ui-markup-header">
+            <div class="project-section-title intec-ui-markup-header" style="text-align: left;">
                 <?= Loc::getMessage('N_PROJECTS_N_D_DEFAULT_SECTION_OBJECTIVE') ?>
             </div>
-            <div class="project-objective intec-ui-markup-text">
+            <div class="project-objective intec-ui-markup-text" style="text-align: left;">
                 <?= $arResult['OBJECTIVE'] ?>
             </div>
         </div>

@@ -11,7 +11,7 @@
 <div class="catalog-element-stages-2" data-background-use="<?= $arBlock['BACKGROUND_USE'] ? 'true' : 'false' ?>">
     <?php $APPLICATION->IncludeComponent(
         "intec.universe:main.stages",
-        "template.5",
+        "template.3",
         array(
             'IBLOCK_TYPE' => $arBlock['IBLOCK']['TYPE'],
             'IBLOCK_ID' => $arBlock['IBLOCK']['ID'],

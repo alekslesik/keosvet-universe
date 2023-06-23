@@ -11,7 +11,7 @@
 <div class="catalog-element-projects-1">
 	<?php $APPLICATION->IncludeComponent(
 		'intec.universe:main.projects',
-		'template.3',
+		'template.2',
 		[
 			'IBLOCK_TYPE' => $arBlock['IBLOCK']['TYPE'],
 			'IBLOCK_ID' => $arBlock['IBLOCK']['ID'],

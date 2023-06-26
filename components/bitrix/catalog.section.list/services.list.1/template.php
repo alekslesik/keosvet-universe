@@ -33,6 +33,10 @@ $arVisual = $arResult['VISUAL'];
         'rounded' => $arVisual['ROUNDED'] ? 'true' : 'false',
         'wide' => $arVisual['WIDE'] ? 'true' : 'false'
     ]
+    ,
+    'style' => [
+        'display' => 'none'
+    ]
 ]) ?>
     <?= Html::beginTag('div', [
         'class' => [

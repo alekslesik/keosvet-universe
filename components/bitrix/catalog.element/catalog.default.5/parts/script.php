@@ -1409,6 +1409,62 @@ $arEcommerce = [
             });
         <?php } ?>
 
+        <?php if ($arResult['FORM']['CHEAPER']['SHOW']) { ?>
+            dynamic.cheaper = $('[data-role="calculate"]', dynamic);
+
+            dynamic.cheaper.on('click', function () {
+                var options = <?= JavaScript::toObject([
+                    'id' => $arResult['FORM']['CHEAPER']['ID'],
+                    'template' => $arResult['FORM']['CHEAPER']['TEMPLATE'],
+                    'parameters' => [
+                        'AJAX_OPTION_ADDITIONAL' => $sTemplateId . '-form',
+                        'CONSENT_URL' => $arResult['URL']['CONSENT']
+                    ],
+                    'settings' => [
+                        'title' => Loc::getMessage('C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_CALCULATE_TITLE')
+                    ]
+                ]) ?>;
+
+                options.fields = {};
+
+                <?php if (!empty($arResult['FORM']['CHEAPER']['PROPERTIES']['PRODUCT'])) { ?>
+                options.fields[<?= JavaScript::toObject($arResult['FORM']['CHEAPER']['PROPERTIES']['PRODUCT']) ?>] = dataItem.name;
+                <?php } ?>
+
+                app.api.forms.show(options);
+                app.metrika.reachGoal('forms.open');
+                app.metrika.reachGoal(<?= JavaScript::toObject('forms.'.$arResult['FORM']['CHEAPER']['ID'].'.open') ?>);
+            });
+        <?php } ?>
+
+        <?php if ($arResult['FORM']['CHEAPER']['SHOW']) { ?>
+            dynamic.cheaper = $('[data-role="oneclick"]', dynamic);
+
+            dynamic.cheaper.on('click', function () {
+                var options = <?= JavaScript::toObject([
+                    'id' => $arResult['FORM']['CHEAPER']['ID'],
+                    'template' => $arResult['FORM']['CHEAPER']['TEMPLATE'],
+                    'parameters' => [
+                        'AJAX_OPTION_ADDITIONAL' => $sTemplateId . '-form',
+                        'CONSENT_URL' => $arResult['URL']['CONSENT']
+                    ],
+                    'settings' => [
+                        'title' => Loc::getMessage('C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_ONECLICK_TITLE')
+                    ]
+                ]) ?>;
+
+                options.fields = {};
+
+                <?php if (!empty($arResult['FORM']['CHEAPER']['PROPERTIES']['PRODUCT'])) { ?>
+                options.fields[<?= JavaScript::toObject($arResult['FORM']['CHEAPER']['PROPERTIES']['PRODUCT']) ?>] = dataItem.name;
+                <?php } ?>
+
+                app.api.forms.show(options);
+                app.metrika.reachGoal('forms.open');
+                app.metrika.reachGoal(<?= JavaScript::toObject('forms.'.$arResult['FORM']['CHEAPER']['ID'].'.open') ?>);
+            });
+        <?php } ?>
+
         var heightPanel = 0;
 
         if (root.panel.length !== 0) {

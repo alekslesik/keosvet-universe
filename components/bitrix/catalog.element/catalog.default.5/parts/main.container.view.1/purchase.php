@@ -17,65 +17,68 @@ use intec\core\helpers\Html;
     <div class="catalog-element-purchase">
         <div class="catalog-element-purchase-wrapper">
             <?php if ($arVisual['TIMER']['SHOW'] && !$bSkuList) { ?>
-                <?php include(__DIR__.'/../purchase/timer.php') ?>
+                <?php include(__DIR__ . '/../purchase/timer.php') ?>
             <?php } ?>
             <?php if (!$bOffers || $bSkuDynamic) { ?>
                 <?php if ($arVisual['PRICE']['SHOW'])
-                    include(__DIR__.'/../purchase/price.php');
+                    include(__DIR__ . '/../purchase/price.php');
                 ?>
                 <?php if ($arVisual['MEASURES']['USE'] && $arVisual['MEASURES']['POSITION'] === 'top')
-                    include(__DIR__.'/../purchase/measures.php');
+                    include(__DIR__ . '/../purchase/measures.php');
                 ?>
                 <?php if ($arVisual['PRICE']['RANGE'])
-                    include(__DIR__.'/../purchase/price.range.php');
+                    include(__DIR__ . '/../purchase/price.range.php');
                 ?>
                 <?php if ($arFields['ADDITIONAL']['SHOW']) { ?>
                     <div class="catalog-element-purchase-block">
-                        <?php include(__DIR__.'/../purchase/products.additional.php') ?>
+                        <?php include(__DIR__ . '/../purchase/products.additional.php') ?>
                     </div>
                 <?php } ?>
-                <?php if ($arVisual['CREDIT']['SHOW'] && !$bSkuList) {
-                    include(__DIR__.'/../purchase/credit.php');
-                } ?>
+                <!-- <?php if ($arVisual['CREDIT']['SHOW'] && !$bSkuList) {
+                            include(__DIR__ . '/../purchase/credit.php');
+                        } ?> -->
                 <?php if ($arVisual['QUANTITY']['SHOW'] || $arResult['FORM']['CHEAPER']['SHOW']) { ?>
                     <div class="catalog-element-purchase-block">
                         <div class="intec-grid intec-grid-wrap intec-grid-i-h-12 intec-grid-i-v-6">
                             <?php if ($arVisual['QUANTITY']['SHOW']) { ?>
                                 <div class="catalog-element-quantity-container intec-grid-item-auto">
-                                    <?php include(__DIR__.'/../purchase/quantity.php') ?>
+                                    <?php include(__DIR__ . '/../purchase/quantity.php') ?>
                                     <?php if ($arVisual['STORES']['USE'] && $arVisual['STORES']['POSITION'] === 'popup')
-                                        include(__DIR__.'/../purchase/quantity.store.php');
+                                        include(__DIR__ . '/../purchase/quantity.store.php');
                                     ?>
                                 </div>
                             <?php } ?>
-                            <?php if ($arResult['FORM']['CHEAPER']['SHOW']) { ?>
-                                <div class="intec-grid-item-auto">
-                                    <?php include(__DIR__.'/../purchase/cheaper.php') ?>
-                                </div>
-                            <?php } ?>
+                            
+                            
+                            <div class="intec-grid-item-auto">
+                                <?php include(__DIR__ . '/../purchase/oneclick.php') ?>
+                            </div>
+                            <div class="intec-grid-item-auto">
+                                <?php include(__DIR__ . '/../purchase/calculate.php') ?>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>
-                <?php if ($arResult['DELIVERY_CALCULATION']['USE']) { ?>
+                <!-- <?php if ($arResult['DELIVERY_CALCULATION']['USE']) { ?>
                     <div class="catalog-element-purchase-block">
-                        <?php include(__DIR__.'/../purchase/delivery.calculation.php') ?>
+                        <?php include(__DIR__ . '/../purchase/delivery.calculation.php') ?>
                     </div>
-                <?php } ?>
+                <?php } ?> -->
                 <?php if ($arResult['ACTION'] !== 'none') { ?>
                     <?php if ($arVisual['MEASURES']['USE'] && $arVisual['MEASURES']['POSITION'] === 'bottom') { ?>
                         <div class="catalog-element-purchase-block">
-                            <?php include(__DIR__.'/../purchase/measures.php') ?>
+                            <?php include(__DIR__ . '/../purchase/measures.php') ?>
                         </div>
                     <?php } ?>
                     <div class="catalog-element-purchase-block catalog-element-purchase-action">
                         <div class="intec-grid intec-grid-wrap">
                             <?php if ($arVisual['COUNTER']['SHOW']) { ?>
                                 <div class="intec-grid-item-2">
-                                    <?php include(__DIR__.'/../purchase/counter.php') ?>
+                                    <?php include(__DIR__ . '/../purchase/counter.php') ?>
                                 </div>
                             <?php } ?>
                             <div class="intec-grid-item">
-                                <?php include(__DIR__.'/../purchase/order.php') ?>
+                                <?php include(__DIR__ . '/../purchase/order.php') ?>
                             </div>
                             <?php if ($arResult['ORDER_FAST']['USE']) { ?>
                                 <div class="catalog-element-buy-fast-container intec-grid-item-1">
@@ -101,19 +104,19 @@ use intec\core\helpers\Html;
                 <?php } ?>
             <?php } else { ?>
                 <?php if ($arVisual['PRICE']['SHOW'] && !empty($arResult['ITEM_PRICES']))
-                    include(__DIR__.'/../purchase/price.static.php');
+                    include(__DIR__ . '/../purchase/price.static.php');
                 ?>
                 <?php if ($arFields['ADDITIONAL']['SHOW']) { ?>
                     <div class="catalog-element-purchase-block">
-                        <?php include(__DIR__.'/../purchase/products.additional.php') ?>
+                        <?php include(__DIR__ . '/../purchase/products.additional.php') ?>
                     </div>
                 <?php } ?>
                 <?php if ($arResult['FORM']['CHEAPER']['SHOW']) { ?>
                     <div class="catalog-element-purchase-block">
-                        <?php include(__DIR__.'/../purchase/cheaper.php') ?>
+                        <?php include(__DIR__ . '/../purchase/cheaper.php') ?>
                     </div>
                 <?php } ?>
-                <?php include(__DIR__.'/../purchase/order.static.php') ?>
+                <?php include(__DIR__ . '/../purchase/order.static.php') ?>
             <?php } ?>
         </div>
     </div>

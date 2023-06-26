@@ -46,123 +46,123 @@ if ($arVisual['PICTURE']['SIZE'] === 'medium') {
         'columns' => $arVisual['COLUMNS']
     ]
 ]) ?>
-    <div class="intec-content intec-content-visible">
-        <div class="intec-content-wrapper">
+<div class="intec-content intec-content-visible">
+    <div class="intec-content-wrapper">
+        <?= Html::beginTag('div', [
+            'class' => Html::cssClassFromArray([
+                'catalog-section-list-items' => true,
+                'intec-grid' => [
+                    '' => !$arVisual['SLIDER']['USE'],
+                    'wrap' => !$arVisual['SLIDER']['USE'],
+                    'a-v-start' => !$arVisual['SLIDER']['USE'],
+                    'a-h-' . $arVisual['ALIGNMENT'] => !$arVisual['SLIDER']['USE'],
+                    'i-15' => !$arVisual['SLIDER']['USE']
+                ],
+                'owl-carousel' => $arVisual['SLIDER']['USE']
+            ], true),
+            'data' => [
+                'role' => $arVisual['SLIDER']['USE'] ? 'slider' : null
+            ]
+        ]) ?>
+        <?php foreach ($arResult['SECTIONS'] as $arSection) {
+
+            $sId = $sTemplateId . '_' . $arSection['ID'];
+            $sAreaId = $this->GetEditAreaId($sId);
+            $this->AddEditAction($sId, $arSection['EDIT_LINK']);
+            $this->AddDeleteAction($sId, $arSection['DELETE_LINK']);
+
+            $arPicture = [
+                'TYPE' => 'picture',
+                'SOURCE' => null,
+                'ALT' => null,
+                'TITLE' => null
+            ];
+
+            if (!empty($arSection['PICTURE'])) {
+                if ($arSection['PICTURE']['CONTENT_TYPE'] === 'image/svg+xml') {
+                    $arPicture['TYPE'] = 'svg';
+                    $arPicture['SOURCE'] = $arSection['PICTURE']['SRC'];
+                } else {
+                    $arPicture['SOURCE'] = CFile::ResizeImageGet($arSection['PICTURE'], $arPictureSize, BX_RESIZE_IMAGE_PROPORTIONAL_ALT);
+
+                    if (!empty($arPicture['SOURCE'])) {
+                        $arPicture['SOURCE'] = $arPicture['SOURCE']['src'];
+                    } else {
+                        $arPicture['SOURCE'] = null;
+                    }
+                }
+            }
+
+            if (empty($arPicture['SOURCE'])) {
+                $arPicture['TYPE'] = 'picture';
+                $arPicture['SOURCE'] = SITE_TEMPLATE_PATH . '/images/picture.missing.png';
+            } else {
+                $arPicture['ALT'] = $arSection['PICTURE']['ALT'];
+                $arPicture['TITLE'] = $arSection['PICTURE']['TITLE'];
+            }
+        ?>
             <?= Html::beginTag('div', [
                 'class' => Html::cssClassFromArray([
-                    'catalog-section-list-items' => true,
-                    'intec-grid' => [
-                        '' => !$arVisual['SLIDER']['USE'],
-                        'wrap' => !$arVisual['SLIDER']['USE'],
-                        'a-v-start' => !$arVisual['SLIDER']['USE'],
-                        'a-h-'.$arVisual['ALIGNMENT'] => !$arVisual['SLIDER']['USE'],
-                        'i-15' => !$arVisual['SLIDER']['USE']
-                    ],
-                    'owl-carousel' => $arVisual['SLIDER']['USE']
+                    'catalog-section-list-item' => true,
+                    'intec-grid-item' => [
+                        $arVisual['COLUMNS'] => !$arVisual['SLIDER']['USE'],
+                        '1024-4' => !$arVisual['SLIDER']['USE'] && $arVisual['COLUMNS'] >= 5,
+                        '768-3' => !$arVisual['SLIDER']['USE'] && $arVisual['COLUMNS'] >= 4,
+                        '600-2' => !$arVisual['SLIDER']['USE'] && $arVisual['COLUMNS'] >= 3,
+                        '375-1' => !$arVisual['SLIDER']['USE']
+                    ]
                 ], true),
-                'data' => [
-                    'role' => $arVisual['SLIDER']['USE'] ? 'slider' : null
-                ]
+                'data-role' => 'item',
+                'data-expanded' => 'false'
             ]) ?>
-                <?php foreach ($arResult['SECTIONS'] as $arSection) {
-
-                    $sId = $sTemplateId.'_'.$arSection['ID'];
-                    $sAreaId = $this->GetEditAreaId($sId);
-                    $this->AddEditAction($sId, $arSection['EDIT_LINK']);
-                    $this->AddDeleteAction($sId, $arSection['DELETE_LINK']);
-
-                    $arPicture = [
-                        'TYPE' => 'picture',
-                        'SOURCE' => null,
-                        'ALT' => null,
-                        'TITLE' => null
-                    ];
-
-                    if (!empty($arSection['PICTURE'])) {
-                        if ($arSection['PICTURE']['CONTENT_TYPE'] === 'image/svg+xml') {
-                            $arPicture['TYPE'] = 'svg';
-                            $arPicture['SOURCE'] = $arSection['PICTURE']['SRC'];
-                        } else {
-                            $arPicture['SOURCE'] = CFile::ResizeImageGet($arSection['PICTURE'], $arPictureSize, BX_RESIZE_IMAGE_PROPORTIONAL_ALT);
-
-                            if (!empty($arPicture['SOURCE'])) {
-                                $arPicture['SOURCE'] = $arPicture['SOURCE']['src'];
-                            } else {
-                                $arPicture['SOURCE'] = null;
-                            }
-                        }
-                    }
-
-                    if (empty($arPicture['SOURCE'])) {
-                        $arPicture['TYPE'] = 'picture';
-                        $arPicture['SOURCE'] = SITE_TEMPLATE_PATH.'/images/picture.missing.png';
-                    } else {
-                        $arPicture['ALT'] = $arSection['PICTURE']['ALT'];
-                        $arPicture['TITLE'] = $arSection['PICTURE']['TITLE'];
-                    }
-                ?>
-                    <?= Html::beginTag('div', [
-                        'class' => Html::cssClassFromArray([
-                            'catalog-section-list-item' => true,
-                            'intec-grid-item' => [
-                                $arVisual['COLUMNS'] => !$arVisual['SLIDER']['USE'],
-                                '1024-4' => !$arVisual['SLIDER']['USE'] && $arVisual['COLUMNS'] >= 5,
-                                '768-3' => !$arVisual['SLIDER']['USE'] && $arVisual['COLUMNS'] >= 4,
-                                '600-2' => !$arVisual['SLIDER']['USE'] && $arVisual['COLUMNS'] >= 3,
-                                '375-1' => !$arVisual['SLIDER']['USE']
-                            ]
-                        ], true),
-                        'data-role' => 'item',
-                        'data-expanded' => 'false'
-                    ]) ?>
-                        <?= Html::beginTag('div', [
-                            'id' => $sAreaId,
-                            'class' => Html::cssClassFromArray([
-                                'catalog-section-list-item-wrapper' => true,
-                            ], true)
-                        ]) ?>
-                                <?= Html::beginTag('a', [
-                                    'class' => Html::cssClassFromArray([
-                                        'catalog-section-list-item-picture-wrap' => true,
-                                        'catalog-section-list-item-picture' => true,
-                                        'intec-image-effect' => true,
-                                        'intec-cl-svg' => $arVisual['SVG']['COLOR'] == 'theme' ? true : false,
-                                        'intec-ui-picture' => true
-                                    ], true),
-                                    'href' => $arSection['SECTION_PAGE_URL'],
-                                    'target' => $arVisual['LINK']['BLANK'] ? '_blank' : null,
-                                ]) ?>
-                                <?php if ($arPicture['TYPE'] === 'svg') { ?>
-                                    <?= FileHelper::getFileData('@root/'.$arPicture['SOURCE']) ?>
-                                <?php } else { ?>
-                                    <?= Html::img($arPicture['SOURCE'], [
-                                        'alt' => $arPicture['ALT'],
-                                        'title' => $arPicture['TITLE'],
-                                        'loading' => 'lazy',
-                                        'data' => [
-                                            'lazyload-use' => $arVisual['LAZYLOAD']['USE'] ? 'true' : 'false',
-                                            'original' => $arVisual['LAZYLOAD']['USE'] ? $arPicture['SOURCE'] : null
-                                        ]
-                                    ]) ?>
-                                <?php } ?>
-                                <?= Html::endTag('a') ?>
-                                <div class="catalog-section-list-item-name-wrap">
-                                    <?= Html::beginTag('a', [
-                                        'class' => [
-                                            'catalog-section-list-item-name',
-                                            'intec-cl-text-hover'
-                                        ],
-                                        'href' => $arSection['SECTION_PAGE_URL'],
-                                        'target' => $arVisual['LINK']['BLANK'] ? '_blank' : null
-                                    ]) ?>
-                                        <?= $arSection['NAME'] ?>
-                                    <?= Html::endTag('a') ?>
-                                </div>
-                        <?= Html::endTag('div') ?>
-                    <?= Html::endTag('div') ?>
-                <?php } ?>
+            <?= Html::beginTag('div', [
+                'id' => $sAreaId,
+                'class' => Html::cssClassFromArray([
+                    'catalog-section-list-item-wrapper' => true,
+                ], true)
+            ]) ?>
+            <?= Html::beginTag('a', [
+                'class' => Html::cssClassFromArray([
+                    'catalog-section-list-item-picture-wrap' => true,
+                    'catalog-section-list-item-picture' => true,
+                    'intec-image-effect' => true,
+                    'intec-cl-svg' => $arVisual['SVG']['COLOR'] == 'theme' ? true : false,
+                    'intec-ui-picture' => true
+                ], true),
+                'href' => $arSection['SECTION_PAGE_URL'],
+                'target' => $arVisual['LINK']['BLANK'] ? '_blank' : null,
+            ]) ?>
+            <?php if ($arPicture['TYPE'] === 'svg') { ?>
+                <?= FileHelper::getFileData('@root/' . $arPicture['SOURCE']) ?>
+            <?php } else { ?>
+                <?= Html::img($arPicture['SOURCE'], [
+                    'alt' => $arPicture['ALT'],
+                    'title' => $arPicture['TITLE'],
+                    'loading' => 'lazy',
+                    'data' => [
+                        'lazyload-use' => $arVisual['LAZYLOAD']['USE'] ? 'true' : 'false',
+                        'original' => $arVisual['LAZYLOAD']['USE'] ? $arPicture['SOURCE'] : null
+                    ]
+                ]) ?>
+            <?php } ?>
+            <?= Html::endTag('a') ?>
+            <div class="catalog-section-list-item-name-wrap">
+                <?= Html::beginTag('a', [
+                    'class' => [
+                        'catalog-section-list-item-name',
+                        'intec-cl-text-hover'
+                    ],
+                    'href' => $arSection['SECTION_PAGE_URL'],
+                    'target' => $arVisual['LINK']['BLANK'] ? '_blank' : null
+                ]) ?>
+                <?= $arSection['NAME'] ?>
+                <?= Html::endTag('a') ?>
+            </div>
             <?= Html::endTag('div') ?>
-        </div>
+            <?= Html::endTag('div') ?>
+        <?php } ?>
+        <?= Html::endTag('div') ?>
     </div>
-    <?php include(__DIR__.'/parts/script.php'); ?>
+</div>
+<?php include(__DIR__ . '/parts/script.php'); ?>
 <?= Html::endTag('div') ?>

@@ -67,6 +67,7 @@ $part = Constructor::isLite() ? 'lite' : 'base';
             <script type="text/javascript"><?= $template->getJs() ?></script>
         <?php } ?>
         <?php if (FileHelper::isFile($directory.'/parts/custom/header.end.php')) include($directory.'/parts/custom/header.end.php') ?>
+        <script src="/local/templates/universe_s1/js/custom.js"></script>
     </head>
     <body class="public intec-adaptive">
         <?php if (FileHelper::isFile($directory.'/parts/custom/body.start.php')) include($directory.'/parts/custom/body.start.php') ?>

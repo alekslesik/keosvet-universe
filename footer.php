@@ -16,6 +16,7 @@ if (empty($template))
 ?>
         <?php include($directory.'/parts/'.$part.'/footer.php'); ?>
         <?php if (FileHelper::isFile($directory.'/parts/custom/body.end.php')) include($directory.'/parts/custom/body.end.php') ?>
+        <script src="/local/templates/universe_s1/js/custom.js"></script>
     </body>
 </html>
 <?php if (FileHelper::isFile($directory.'/parts/custom/end.php')) include($directory.'/parts/custom/end.php') ?>

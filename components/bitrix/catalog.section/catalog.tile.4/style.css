@@ -1535,4 +1535,22 @@
   }
 }
 
+.catalog-section-item-base .section-main-element-param {
+  font-size: 12px;
+}
+
+.catalog-section-item-base .section-main-element-param img {
+  max-width: 8%;
+}
+
+.section-main-element-param img,
+.section-main-element-param .flow,
+.section-main-element-param .unit {
+  vertical-align: middle;
+}
+
+.section-main-element-param .element-param {
+  margin-bottom: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */

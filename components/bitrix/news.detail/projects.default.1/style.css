@@ -667,4 +667,11 @@
     }
 }
 
+.project .project-detail-form .widget.c-form.c-form-template-1 .widget-form-body {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	margin-top: 70px;
+}
+
 /** /Solution **/

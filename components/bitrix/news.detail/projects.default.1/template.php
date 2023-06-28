@@ -77,12 +77,40 @@ $arLazyLoad = $arResult['LAZYLOAD'];
 
 ?>
 <div class="project" id="<?= $sTemplateId ?>">
+    
+
     <div class="project-wrapper">
         <?php if (!empty($sImage)) { ?>
             <?php include(__DIR__ . '/parts/header-with-image.php') ?>
         <? } else { ?>
             <?php include(__DIR__ . '/parts/header-no-img.php') ?>
         <? } ?>
+
+        <div class="project-detail-form">
+        <? $APPLICATION->IncludeComponent(
+            "intec.universe:main.form",
+            "template.1",
+            array(
+                "COMPONENT_TEMPLATE" => "template.1",
+                "ID" => "1",
+                "NAME" => "Заказать звонок",
+                "SETTINGS_USE" => "N",
+                "LAZYLOAD_USE" => "N",
+                "CONSENT" => "",
+                "TEMPLATE" => ".default",
+                "TITLE" => "Подготовка проекта и расчет освещения",
+                "DESCRIPTION_SHOW" => "N",
+                "BUTTON_TEXT" => "Получить проект бесплатно",
+                "THEME" => "dark",
+                "VIEW" => "left",
+                "BACKGROUND_COLOR" => "#f4f4f4",
+                "BACKGROUND_IMAGE_USE" => "N",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "0"
+            ),
+            false
+        ); ?>
+    </div>
         <div class="project-sections">
             <div class="project-sections-wrapper">
                 <div class="project-section project-section-indent"></div>

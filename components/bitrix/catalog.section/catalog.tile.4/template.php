@@ -261,6 +261,7 @@ include(__DIR__ . '/parts/sku.php');
                     ]
                 ]) ?>
             </div>
+
             <div class="section-main-element-param">
                 <?php
                 // ID элемента инфоблока
@@ -317,6 +318,7 @@ include(__DIR__ . '/parts/sku.php');
                     <span class="unit">IP</span>
                 </div>
             </div>
+            
 
             <!--noindex-->
             <?php if ($arItem['VISUAL']['QUANTITY']['SHOW'] || $arVisual['ARTICLE']['SHOW']) { ?>

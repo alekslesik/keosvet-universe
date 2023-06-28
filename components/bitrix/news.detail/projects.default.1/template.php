@@ -1,4 +1,4 @@
-<?php if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die() ?>
+<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die() ?>
 <?php
 
 use Bitrix\Main\Localization\Loc;
@@ -46,7 +46,7 @@ if ($arParams['DISPLAY_FORM_ORDER'] == 'Y' && !empty($arParams['FORM_ORDER'])) {
         'id' => $arParams['FORM_ORDER'],
         'template' => '.default',
         'parameters' => [
-            'AJAX_OPTION_ADDITIONAL' => $sTemplateId.'_FORM_ORDER',
+            'AJAX_OPTION_ADDITIONAL' => $sTemplateId . '_FORM_ORDER',
             'CONSENT_URL' => $arParams['CONSENT_URL']
         ],
         'settings' => [
@@ -64,7 +64,7 @@ if ($arParams['DISPLAY_FORM_ASK'] == 'Y' && !empty($arParams['FORM_ASK'])) {
         'id' => $arParams['FORM_ASK'],
         'template' => '.default',
         'parameters' => [
-            'AJAX_OPTION_ADDITIONAL' => $sTemplateId.'_FORM_ASK',
+            'AJAX_OPTION_ADDITIONAL' => $sTemplateId . '_FORM_ASK',
             'CONSENT_URL' => $arParams['CONSENT_URL']
         ],
         'settings' => [
@@ -79,20 +79,20 @@ $arLazyLoad = $arResult['LAZYLOAD'];
 <div class="project" id="<?= $sTemplateId ?>">
     <div class="project-wrapper">
         <?php if (!empty($sImage)) { ?>
-            <?php include(__DIR__.'/parts/header-with-image.php') ?>
+            <?php include(__DIR__ . '/parts/header-with-image.php') ?>
         <? } else { ?>
-            <?php include(__DIR__.'/parts/header-no-img.php') ?>
+            <?php include(__DIR__ . '/parts/header-no-img.php') ?>
         <? } ?>
         <div class="project-sections">
             <div class="project-sections-wrapper">
                 <div class="project-section project-section-indent"></div>
-                <?php include(__DIR__.'/parts/gallery.php') ?>
-                <?php include(__DIR__.'/parts/objective.php') ?>
-                <?php include(__DIR__.'/parts/information.php') ?>
-                <?php include(__DIR__.'/parts/services.php') ?>
-                <?php include(__DIR__.'/parts/review.php') ?>
-                <?php include(__DIR__.'/parts/images.php') ?>
-                <?php include(__DIR__.'/parts/solution.php') ?>
+                <?php include(__DIR__ . '/parts/gallery.php') ?>
+                <?php include(__DIR__ . '/parts/objective.php') ?>
+                <?php include(__DIR__ . '/parts/information.php') ?>
+                <?php include(__DIR__ . '/parts/services.php') ?>
+                <?php include(__DIR__ . '/parts/review.php') ?>
+                <?php include(__DIR__ . '/parts/images.php') ?>
+                <?php include(__DIR__ . '/parts/solution.php') ?>
             </div>
         </div>
     </div>

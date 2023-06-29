@@ -483,7 +483,9 @@
   border-color: #0065ff;
 }
 .c-header.c-header-template-1 .widget-view.widget-view-desktop .widget-container-contacts[data-multiple=true] .widget-container-button-wrap {
+  /* margin-right: 17px; */
   margin-right: 17px;
+  padding-left: 20px;
 }
 .c-header.c-header-template-1 .widget-view.widget-view-desktop .widget-container-contacts[data-expanded=true] .widget-container-button {
   opacity: 0;
@@ -722,6 +724,22 @@
 }
 .c-header.c-header-template-1.widget-transparent[data-color=black] .widget-view.widget-view-desktop .ns-bitrix.c-menu.c-menu-horizontal-1 .menu-item:hover .menu-item-text .menu-item-text-wrapper, .c-header.c-header-template-1.widget-transparent[data-color=black] .widget-view.widget-view-desktop .ns-bitrix.c-menu.c-menu-horizontal-1 .menu-item.menu-item-active .menu-item-text .menu-item-text-wrapper {
   opacity: 0.5;
+}
+
+/* callheader  */
+.widget-panel-item .widget-container-button.callheader {
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2d2d2d;
+  cursor: pointer;
+  border-bottom: 1px dashed #2d2d2d;
+  -webkit-transition: opacity 500ms, color 350ms, border 350ms;
+  -moz-transition: opacity 500ms, color 350ms, border 350ms;
+  -ms-transition: opacity 500ms, color 350ms, border 350ms;
+  -o-transition: opacity 500ms, color 350ms, border 350ms;
+  transition: opacity 500ms, color 350ms, border 350ms;
 }
 
 /*# sourceMappingURL=style.css.map */

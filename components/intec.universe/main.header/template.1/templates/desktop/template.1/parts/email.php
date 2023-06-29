@@ -11,13 +11,13 @@ use intec\core\bitrix\component\InnerTemplate;
  */
 
 ?>
-<?php if ($arResult['EMAIL']['SHOW']['DESKTOP']) { ?>
-    <div class="widget-panel-item">
+<?php // if ($arResult['EMAIL']['SHOW']['DESKTOP']) { ?>
+    <div class="widget-panel-item" style="padding: 0;">
         <div class="widget-panel-item-wrapper intec-grid intec-grid-a-v-center">
-            <div class="widget-panel-item-icon intec-grid-item-auto intec-ui-icon intec-ui-icon-mail-1 intec-cl-text"></div>
+            <div class="widget-panel-item-icon intec-grid-item-auto intec-ui-icon intec-ui-icon-mail-1 intec-cl-text" style="margin-right: 5px;"></div>
             <a href="mailto:<?= $arResult['EMAIL']['VALUE'] ?>" class="email widget-panel-item-text intec-grid-item-auto">
                 <?= $arResult['EMAIL']['VALUE'] ?>
             </a>
         </div>
     </div>
-<?php } ?>
+<?php // } ?>

@@ -125,7 +125,10 @@ if ($arResult['CONTACTS']['SHOW']) {
                                             <?php } else { ?>
                                                 <?php include(__DIR__.'/parts/region.php') ?>
                                                 <?php include(__DIR__.'/parts/address.php') ?>
-                                                <?php include(__DIR__.'/parts/email.php') ?>
+                                                
+                                                <!-- replace email with callheader -->
+                                                <!-- <?php include(__DIR__.'/parts/email.php') ?> -->
+                                                <?php include(__DIR__.'/parts/callheader.php') ?>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -412,12 +415,18 @@ if ($arResult['CONTACTS']['SHOW']) {
                                             <div class="widget-container-phone-arrow far fa-chevron-down" data-block-action="popup.open"></div>
                                         <?php } ?>
                                     </div>
-                                    <?php if ($arResult['FORMS']['CALL']['SHOW']) { ?>
+                                    <?php // if ($arResult['FORMS']['CALL']['SHOW']) { ?>
+                                        <?php if ($arResult['EMAIL']['SHOW']['DESKTOP']) { ?>
                                         <div class="widget-container-button-wrap">
-                                            <div class="widget-container-button intec-cl-text-hover intec-cl-border-hover" data-action="forms.call.open">
+
+                                            <!-- remove order to call -->
+                                            <!-- <div class="widget-container-button intec-cl-text-hover intec-cl-border-hover" data-action="forms.call.open">
                                                 <?= Loc::getMessage('C_HEADER_TEMP1_DESKTOP_TEMP1_BUTTON') ?>
                                             </div>
-                                            <?php include(__DIR__.'/../../../parts/forms/call.php') ?>
+                                            <?php include(__DIR__.'/../../../parts/forms/call.php') ?> -->
+
+                                            <!-- add email instead of order a call -->
+                                            <?php include(__DIR__.'/parts/email.php') ?>
                                         </div>
                                     <?php } ?>
                                 </div>

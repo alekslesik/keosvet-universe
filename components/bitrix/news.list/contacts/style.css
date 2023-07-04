@@ -22,6 +22,7 @@
 .contacts .contacts-contact.contacts-contact-with-map {
     margin-top: -63px;
     overflow: hidden;
+    display: none;
 }
 
 .contacts .scrollbar-outer .intec-ui.intec-ui-control-tabs {

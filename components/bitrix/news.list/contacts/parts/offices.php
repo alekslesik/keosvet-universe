@@ -23,7 +23,7 @@ use intec\core\helpers\Html;
             <?= $arResult['DESCRIPTION']['TEXT'] ?>
         </div>
     <?php } ?>
-    <div class="contacts-sections" style="display: none;">
+    <div class="contacts-sections">
         <?php foreach($arResult['SECTIONS'] as $arSection) { ?>
             <?php if (count($arSection['ITEMS']) <= 0) continue; ?>
             <div class="contacts-section">

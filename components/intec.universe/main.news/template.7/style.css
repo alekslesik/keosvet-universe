@@ -74,6 +74,7 @@
   font-size: 12px;
   line-height: 16px;
   margin-top: 10px;
+  display: none;
 }
 .widget.c-news.c-news-template-7 [data-role=form] {
   display: none;

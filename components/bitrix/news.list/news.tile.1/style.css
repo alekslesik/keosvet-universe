@@ -25,6 +25,7 @@
   font-size: 12px;
   line-height: 16px;
   margin-top: 12px;
+  display: none;
 }
 .ns-bitrix.c-news-list.c-news-list-tile-1 .news-list-item-tags {
   margin-top: 10px;

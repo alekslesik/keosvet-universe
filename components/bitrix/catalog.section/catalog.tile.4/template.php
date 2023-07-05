@@ -271,6 +271,7 @@ include(__DIR__ . '/parts/sku.php');
                 $powerCode = "MOSHNOSTY_VT";
                 $lumenCode = "SVETOVOY_POTOK_LM";
                 $ipCode = "STEPENY_ZASHITY_IP";
+                $rulerCode = "GABARITNYE_RAZMERY";
 
                 // Получаем объект элемента инфоблока
                 // CModule::IncludeModule("iblock");
@@ -295,6 +296,10 @@ include(__DIR__ . '/parts/sku.php');
                                 $ipValue = $property["VALUE"];
                                 $ipName = $property["NAME"];
                                 break;
+                            case $rulerCode:
+                                $rulerValue = $property["VALUE"];
+                                $rulerName = $property["NAME"];
+                                break;
                             default:
                                 break;
                         }
@@ -317,8 +322,13 @@ include(__DIR__ . '/parts/sku.php');
                     <span class="flow"><?= $ipValue ?></span>
                     <span class="unit">IP</span>
                 </div>
+                <div class="element-param">
+                    <img src="/local/templates/universe_s1/images/logos/ruler.png" title=<?= $rulerName ?> alt=<?= $rulerName ?> class="icon-led">
+                    <span class="flow"><?= $rulerValue ?></span>
+                    <span class="unit">мм</span>
+                </div>
             </div>
-            
+
 
             <!--noindex-->
             <?php if ($arItem['VISUAL']['QUANTITY']['SHOW'] || $arVisual['ARTICLE']['SHOW']) { ?>

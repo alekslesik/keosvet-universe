@@ -744,8 +744,9 @@ $arEcommerce = [
         });
         <?php } ?>
 
+        // ONECLICK
         <?php if ($arResult['FORM']['CHEAPER']['SHOW']) { ?>
-            dynamic.cheaper = $('[data-role="cheaper"]', dynamic);
+            dynamic.cheaper = $('[data-role="oneclick"]', dynamic);
             dynamic.cheaper.on('click', function () {
                 var options = <?= JavaScript::toObject([
                     'id' => $arResult['FORM']['CHEAPER']['ID'],
@@ -755,7 +756,35 @@ $arEcommerce = [
                         'CONSENT_URL' => $arResult['URL']['CONSENT']
                     ],
                     'settings' => [
-                        'title' => Loc::getMessage('C_CATALOG_ELEMENT_CATALOG_DEFAULT_1_FORM_CHEAPER_TITLE')
+                        'title' => Loc::getMessage('C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_ONECLICK_TITLE')
+                    ]
+                ]) ?>;
+
+                options.fields = {};
+
+                <?php if (!empty($arResult['FORM']['CHEAPER']['PROPERTIES']['PRODUCT'])) { ?>
+                options.fields[<?= JavaScript::toObject($arResult['FORM']['CHEAPER']['PROPERTIES']['PRODUCT']) ?>] = dataItem.name;
+                <?php } ?>
+
+            app.api.forms.show(options);
+            app.metrika.reachGoal('forms.open');
+            app.metrika.reachGoal(<?= JavaScript::toObject('forms.'.$arResult['FORM']['CHEAPER']['ID'].'.open') ?>);
+        });
+        <?php } ?>
+
+        // CALCULATE
+        <?php if ($arResult['DELIVERY_CALCULATION']['USE']) { ?>
+            dynamic.cheaper = $('[data-role="calculate"]', dynamic);
+            dynamic.cheaper.on('click', function () {
+                var options = <?= JavaScript::toObject([
+                    'id' => "1",
+                    'template' => ".default",
+                    'parameters' => [
+                        'AJAX_OPTION_ADDITIONAL' => $sTemplateId.'-form',
+                        'CONSENT_URL' => $arResult['URL']['CONSENT']
+                    ],
+                    'settings' => [
+                        'title' => Loc::getMessage('C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_CALCULATE_TITLE')
                     ]
                 ]) ?>;
 
@@ -826,7 +855,7 @@ $arEcommerce = [
 
         <?php if ($arResult['DELIVERY_CALCULATION']['USE'] &&
     (empty($arResult['OFFERS']) || $arResult['SKU_VIEW'] == 'dynamic')) { ?>
-            dynamic.deliveryCalculation = $('[data-role="deliveryCalculation"]', dynamic);
+            dynamic.deliveryCalculation = $('[data-role="deliveryCalculation1"]', dynamic);
             dynamic.deliveryCalculation.on('click', function () {
                 var template = <?= JavaScript::toObject($arResult['DELIVERY_CALCULATION']['TEMPLATE']) ?>;
                 var parameters = <?= JavaScript::toObject($arResult['DELIVERY_CALCULATION']['PARAMETERS']) ?>;
@@ -1215,7 +1244,7 @@ $arEcommerce = [
             <?php } ?>
 
             <?php if ($arResult['DELIVERY_CALCULATION']['USE']) { ?>
-                offer.deliveryCalculation = $('[data-role="deliveryCalculation"]', offer);
+                offer.deliveryCalculation = $('[data-role="deliveryCalculation_"]', offer);
                 offer.deliveryCalculation.on('click', function () {
                     var template = <?= JavaScript::toObject($arResult['DELIVERY_CALCULATION']['TEMPLATE']) ?>;
                     var parameters = <?= JavaScript::toObject($arResult['DELIVERY_CALCULATION']['PARAMETERS']) ?>;

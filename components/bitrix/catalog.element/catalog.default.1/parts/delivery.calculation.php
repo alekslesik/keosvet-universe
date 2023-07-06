@@ -6,6 +6,8 @@ use intec\core\helpers\FileHelper;
 use intec\core\helpers\Html;
 
 ?>
+
+<!-- CALCULATE -->
 <div class="catalog-element-delivery-calculation-button-wrap">
     <?= Html::beginTag('div', [
         'class' => [
@@ -17,13 +19,11 @@ use intec\core\helpers\Html;
                 'mod-link'
             ]
         ],
-        'data-role' => 'deliveryCalculation'
+        'data-role' => 'calculate'
     ]) ?>
-        <div class="intec-ui-part-icon">
-            <?= FileHelper::getFileData(__DIR__.'/../svg/delivery.icon.svg')?>
-        </div>
+
         <div class="catalog-element-delivery-calculation-text intec-cl-text-hover intec-ui-part-content">
-            <?= Loc::getMessage('C_CATALOG_ELEMENT_CATALOG_DEFAULT_1_PURCHASE_DELIVERY_CALCULATION') ?>
+            <?= Loc::getMessage('C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_CALCULATE') ?>
         </div>
     <?= Html::endTag('div') ?>
 </div>

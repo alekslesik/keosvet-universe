@@ -49,3 +49,8 @@ $MESS['C_CATALOG_ELEMENT_CATALOG_DEFAULT_1_MAX_MESSAGE'] = 'Выбрано ма�
 $MESS['C_CATALOG_ELEMENT_CATALOG_DEFAULT_1_ACCESSORIES_NAME_DEFAULT'] = 'Аксессуары';
 
 $MESS['C_CATALOG_ELEMENT_CATALOG_DEFAULT_1_NO_IMAGE_TITLE'] = 'Нет изображения';
+
+$MESS['C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_ONECLICK'] = 'Заказать в 1 клик';
+$MESS['C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_ONECLICK_TITLE'] = 'Заказать в 1 клик';
+$MESS['C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_CALCULATE'] = 'Бесплатный расчет освещения';
+$MESS['C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_CALCULATE_TITLE'] = 'Бесплатный расчет освещения';

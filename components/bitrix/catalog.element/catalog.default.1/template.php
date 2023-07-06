@@ -365,7 +365,7 @@ if (!empty($arResult['ITEM_PRICES']))
                 <div class="catalog-element-sections catalog-element-sections-wide" data-print="false">
                     <div class="catalog-element-section">
                         <div class="catalog-element-section-content">
-                            <?php include(__DIR__.'/parts/form.php'); ?>
+                            <?php // include(__DIR__.'/parts/form.php'); ?>
                         </div>
                     </div>
                 </div>

@@ -65,6 +65,10 @@ $arFields = [
         'SHOW' => false,
         'VALUES' => []
     ],
+    'IES' => [
+        'SHOW' => true,
+        'VALUES' => []
+    ],
     'OFFERS' => []
 ];
 $arProperty = [];
@@ -203,6 +207,40 @@ if (!empty($arParams['PROPERTY_DOCUMENTS'])) {
 
     if (!empty($arFields['DOCUMENTS']['VALUES']))
         $arFields['DOCUMENTS']['SHOW'] = $arVisual['DOCUMENTS']['SHOW'];
+}
+
+/** IES */
+if (!empty($arParams['PROPERTY_DOCUMENTS'])) {
+    $arProperty = ArrayHelper::getValue($arResult, [
+        'PROPERTIES',
+        'IES',
+        'VALUE'
+    ]);
+
+    if (!empty($arProperty)) {
+        if (!Type::isArray($arProperty))
+            $arProperty[] = $arProperty;
+
+        $arProperty = Arrays::fromDBResult(CFile::GetList(['SORT' => 'ASC'], [
+            '@ID' => implode(',', $arProperty)
+        ]))->indexBy('ID');
+
+        if (!$arProperty->isEmpty()) {
+            $arProperty = $arProperty->asArray(function ($key, $arFile) {
+                $arFile['SRC'] = CFile::GetFileSRC($arFile);
+
+                return [
+                    'key' => $key,
+                    'value' => $arFile
+                ];
+            });
+
+            $arFields['IES']['VALUES'] = $arProperty;
+        }
+    }
+
+    if (!empty($arFields['IES']['VALUES']))
+        $arFields['IES']['SHOW'] = true;
 }
 
 /** Метки товара */

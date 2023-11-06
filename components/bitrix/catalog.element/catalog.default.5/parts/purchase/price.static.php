@@ -20,7 +20,8 @@ $arPrice = ArrayHelper::getFirstValue($arResult['ITEM_PRICES']);
                     <span class="catalog-element-price-current-value">
                         <?= Loc::getMessage('C_CATALOG_ELEMENT_DEFAULT_5_TEMPLATE_PRICE_RANGE_FROM', [
                             '#FROM#' => $arPrice['PRINT_PRICE']
-                        ]) ?>
+                        ]) ?><br>
+
                     </span>
                 </div>
                 <?php if ($arVisual['PRICE']['DISCOUNT']['OLD'] && $arPrice['PERCENT'] > 0) { ?>

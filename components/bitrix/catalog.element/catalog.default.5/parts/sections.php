@@ -251,7 +251,8 @@ if ($arSections['SHIPMENT']['SHOW']) {
                         'active' => $bFirst ? 'true' : 'false'
                     ]
                 ]) ?>
-                    <?php if (!empty($arSections['DESCRIPTION']['OFFERS'])) { ?>
+                    <!-- <?php // if (!empty($arSections['DESCRIPTION']['OFFERS'])) { ?>
+                    <?php if (false) { ?>
                         <?php foreach ($arSections['DESCRIPTION']['OFFERS'] as $sKey => $sDescription) { ?>
                         <div class="catalog-element-sections-content-text" data-offer="<?= $sKey ?>">
                                 <?= $sDescription ?>
@@ -265,7 +266,16 @@ if ($arSections['SHIPMENT']['SHOW']) {
                         <?php } else if ($arSection['TYPE'] === 'file')
                             include($arSection['VALUE']);
                         ?>
-                    <?php } ?>
+                    <?php } ?> -->
+
+                    <?php if ($arSection['TYPE'] === 'print') { ?>
+                            <div class="catalog-element-sections-content-text">
+                                <?= $arSection['VALUE'] ?>
+                            </div>
+                        <?php } else if ($arSection['TYPE'] === 'file')
+                            include($arSection['VALUE']);
+                    ?>
+
                 <?= Html::endTag('div') ?>
                 <?php if ($bFirst) $bFirst = false ?>
             <?php } ?>

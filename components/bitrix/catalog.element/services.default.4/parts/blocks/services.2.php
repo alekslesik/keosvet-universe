@@ -63,6 +63,7 @@ $GLOBALS['arServicesServicesFilter'] = [
                         'SLIDER_AUTO_PLAY_USE' => 'N',
                         'WIDE' => 'N',
                         'SETTINGS_USE' => 'N',
+                        
                         'LAZYLOAD_USE' => $arResult['LAZYLOAD']['USE'] ? 'Y' : 'N'
                     ),
                     $component

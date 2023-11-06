@@ -23,7 +23,12 @@ $bFirstItem = true;
         <div class="menu-submenu-main-section scrollbar-inner intec-grid-item" data-role="scrollbar">
             <div class="menu-submenu-main-section-wrapper">
                 <?php foreach ($arItems as $arItem) { ?>
+
                     <?php
+                        if ($arItem['LINK'] === "/catalog/analogi/") {
+                            # code...
+                            continue;
+                        }
                         $bActive = $arItem['ACTIVE'];
                         $sUrl = $bActive ? null : $arItem['LINK'];
                         $sTag = $bActive ? 'div' : 'a';
@@ -59,6 +64,7 @@ $bFirstItem = true;
                         }
                     ?>
                     <div class="menu-submenu-main-section-item <?= $bSelected ? 'active' : null ?>" data-role="main-item">
+
                         <?= Html::beginTag($sTag, array(
                             'class' => Html::cssClassFromArray([
                                 'menu-submenu-main-section-item-text' => true,

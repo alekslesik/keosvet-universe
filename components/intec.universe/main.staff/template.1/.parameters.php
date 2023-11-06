@@ -69,7 +69,7 @@ if (!empty($arCurrentValues['IBLOCK_ID'])) {
 
             return [
                 'key' => $arProperty['CODE'],
-                'value' => '['.$arProperty['CODE'].'] '.$arProperty['NAME']
+                'value' => '[' . $arProperty['CODE'] . '] ' . $arProperty['NAME']
             ];
         };
 
@@ -98,38 +98,31 @@ if (!empty($arCurrentValues['IBLOCK_ID'])) {
             'REFRESH' => 'Y'
         ];
 
-        if ($arCurrentValues['SOCIALS_SHOW'] === 'Y') {
-            $arTemplateParameters['PROPERTY_LINK_VKONTAKTE'] = [
-                'PARENT' => 'DATA_SOURCE',
-                'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_VKONTAKTE'),
-                'TYPE' => 'LIST',
-                'VALUES' => $arProperties->asArray($fPropertiesText),
-                'ADDITIONAL_VALUES' => 'Y'
-            ];
 
-            $arTemplateParameters['PROPERTY_LINK_FACEBOOK'] = [
-                'PARENT' => 'DATA_SOURCE',
-                'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_FACEBOOK'),
-                'TYPE' => 'LIST',
-                'VALUES' => $arProperties->asArray($fPropertiesText),
-                'ADDITIONAL_VALUES' => 'Y'
-            ];
+        $arTemplateParameters['PROPERTY_LINK_VKONTAKTE'] = [
+            'PARENT' => 'DATA_SOURCE',
+            'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_VKONTAKTE'),
+            'TYPE' => 'LIST',
+            'VALUES' => $arProperties->asArray($fPropertiesText),
+            'ADDITIONAL_VALUES' => 'Y'
+        ];
 
-            $arTemplateParameters['PROPERTY_LINK_INSTAGRAM'] = [
-                'PARENT' => 'DATA_SOURCE',
-                'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_INSTAGRAM'),
-                'TYPE' => 'LIST',
-                'VALUES' => $arProperties->asArray($fPropertiesText),
-                'ADDITIONAL_VALUES' => 'Y'
-            ];
 
-            $arTemplateParameters['PROPERTY_LINK_TWITTER'] = [
-                'PARENT' => 'DATA_SOURCE',
-                'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_TWITTER'),
-                'TYPE' => 'LIST',
-                'VALUES' => $arProperties->asArray($fPropertiesText),
-                'ADDITIONAL_VALUES' => 'Y'
-            ];
-        }
+        // $arTemplateParameters['PROPERTY_LINK_INSTAGRAM'] = [
+        //     'PARENT' => 'DATA_SOURCE',
+        //     'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_INSTAGRAM'),
+        //     'TYPE' => 'LIST',
+        //     'VALUES' => $arProperties->asArray($fPropertiesText),
+        //     'ADDITIONAL_VALUES' => 'Y'
+        // ];
+
+        // $arTemplateParameters['PROPERTY_LINK_TWITTER'] = [
+        //     'PARENT' => 'DATA_SOURCE',
+        //     'NAME' => Loc::getMessage('C_MAIN_STAFF_TEMPLATE_1_PROPERTY_LINK_TWITTER'),
+        //     'TYPE' => 'LIST',
+        //     'VALUES' => $arProperties->asArray($fPropertiesText),
+        //     'ADDITIONAL_VALUES' => 'Y'
+        // ];
+
     }
 }

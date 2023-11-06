@@ -86,5 +86,8 @@ $sTemplateType = $arData['type'];
             </div>
         </div>
     </div>
+    <div class="view-mobile-2-phone">
+        <a href="tel:+74991132770">+7(499)113-27-70</a>
+    </div>
     <?php //$APPLICATION->ShowViewContent('template-header-mobile-before') ?>
 <?= Html::endTag('div') ?>

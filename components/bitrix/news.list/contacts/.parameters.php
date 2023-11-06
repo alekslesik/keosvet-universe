@@ -242,7 +242,7 @@ if ($arCurrentValues['DESCRIPTION_SHOW'] == 'Y') {
     $arTemplateParameters['DESCRIPTION_TEXT'] = [
         'PARENT' => 'VISUAL',
         'NAME' => Loc::getMessage('C_NEWS_LIST_CONTACTS_DESCRIPTION_TEXT'),
-        'TYPE' => 'TEXT',
+        'TYPE' => 'HTML',
         'VALUES' => ''
     ];
 }

@@ -33,6 +33,7 @@ if (!empty($arResult['ITEM_PRICES']))
             <span class="catalog-element-price-current-value" data-role="price.discount">
                 <?= !empty($arPrice) ? $arPrice['PRINT_PRICE'] : null ?>
             </span>
+            <span class="nds">ндс 20% включен в цену</span>
             <span class="catalog-element-price-current-separator">/</span>
             <span class="catalog-element-price-current-measure" data-role="price.measure">
                 <?= !empty($arResult['CATALOG_MEASURE_NAME']) ? $arResult['CATALOG_MEASURE_NAME'] : null ?>

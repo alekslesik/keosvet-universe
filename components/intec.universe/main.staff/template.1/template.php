@@ -136,17 +136,8 @@ $arVisual['SOCIALS']['LIST']['TWITTER']['ICON'] = 'fab fa-twitter';
                                     <?php foreach ($arVisual['SOCIALS']['LIST'] as $arSocial) { ?>
                                         <?php $sLink = $arItem['SOCIALS'][$arSocial['CODE']] ?>
                                         <?php if (!empty($sLink)) { ?>
-                                            <div class="widget-element-icon-wrap intec-grid-item-4">
-                                                <?= Html::tag('a', '', [
-                                                    'href' => $sLink,
-                                                    'target' => '_blank',
-                                                    'title' => $arSocial['NAME'],
-                                                    'class' => [
-                                                        'widget-element-icon',
-                                                        'intec-cl-text-hover',
-                                                        $arSocial['ICON']
-                                                    ]
-                                                ]) ?>
+                                            <div class="widget-element-icon-wrap intec-grid-item-1">
+                                                <a href="mailto:<?= $sLink ?>"> <?= $sLink ?></a>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>

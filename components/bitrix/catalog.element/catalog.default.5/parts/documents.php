@@ -47,6 +47,8 @@ $fGetFileNameWOExtension = function($fileName) {
                             'target' => '_blank'
                         ]) ?>
                             <div class="catalog-element-documents-item-name">
+                                <?php= $arDocument ?>
+
                                 <?= $fGetFileNameWOExtension($arDocument['ORIGINAL_NAME']) ?>
                             </div>
                             <div class="catalog-element-documents-item-size">

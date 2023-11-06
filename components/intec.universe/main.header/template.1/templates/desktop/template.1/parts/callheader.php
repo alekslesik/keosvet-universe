@@ -14,7 +14,6 @@ use intec\core\helpers\JavaScript;
 
 ?>
 
-<!-- add callheader to header -->
 <?php if ($arResult['FORMS']['CALL']['SHOW']) { ?>
     <div class="widget-panel-item">
         <div class="widget-panel-item-wrapper intec-grid intec-grid-a-v-center">

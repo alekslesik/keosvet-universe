@@ -397,9 +397,12 @@ $arFilter = $arParams['FILTER'];
                         </div>
                     <?php } ?>
                     <?php $GLOBALS[$sFilterName]['ID'] = $arElements['ID']; ?>
+					<?
+					$arElements['PARAMETERS']['PAGE_ELEMENT_COUNT'] = 20;
+					?>
                     <?php $APPLICATION->IncludeComponent(
                         'bitrix:catalog.section',
-                        $arElements['TEMPLATE'],
+                       'catalog.tile.2',
                         $arElements['PARAMETERS'],
                         $component,
                         ['HIDE_ICONS' => 'Y']
@@ -481,7 +484,7 @@ $arFilter = $arParams['FILTER'];
                 }));
             }
 
-            /*Ïåðåíîñèì ìîáèëüíûé ôèëüòð*/
+            /*ÐŸÐµÑ€ÐµÐ½Ð¾ÑÐ¸Ð¼ Ð¼Ð¾Ð±Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€*/
             //catalog.panel.filterMobile
             let mobileFilter = $('#searchFilterMobile > div');
             let mobileFilterPanel = $('#panelFilterMobile');

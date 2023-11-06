@@ -102,6 +102,26 @@ include(__DIR__.'/parts/measure.php');
     ]) ?>
         <?php foreach($arResult['ITEMS'] as $arItem) { ?>
         <?php
+            $isShowInCatalog = "";
+            $showInCatalogProp = "SHOW_IN_CATALOG";
+            $element = CIBlockElement::GetByID($arItem['ID'])->GetNextElement();
+
+            if ($element) {
+                // Получаем массив свойств элемента
+                $properties = $element->GetProperties();
+
+                // Поиск свойства по коду
+                foreach ($properties as $property) {
+                    if ($property['CODE'] == $showInCatalogProp) {
+                        $isShowInCatalog = $property["VALUE"];
+                    }
+                }
+            } else break;
+
+            if ($isShowInCatalog == "") {
+                continue;
+            }
+
             $sId = $sTemplateId.'_'.$arItem['ID'];
             $sAreaId = $this->GetEditAreaId($sId);
             $this->AddEditAction($sId, $arItem['EDIT_LINK']);

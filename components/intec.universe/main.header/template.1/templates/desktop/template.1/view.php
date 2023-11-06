@@ -125,8 +125,6 @@ if ($arResult['CONTACTS']['SHOW']) {
                                             <?php } else { ?>
                                                 <?php include(__DIR__.'/parts/region.php') ?>
                                                 <?php include(__DIR__.'/parts/address.php') ?>
-                                                
-                                                <!-- replace email with callheader -->
                                                 <!-- <?php include(__DIR__.'/parts/email.php') ?> -->
                                                 <?php include(__DIR__.'/parts/callheader.php') ?>
                                             <?php } ?>

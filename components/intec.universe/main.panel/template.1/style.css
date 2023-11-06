@@ -26,6 +26,7 @@
   -o-transition-property: opacity, transform;
   transition-property: opacity, transform;
 }
+
 .c-panel.c-panel-template-1[data-in=true] {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -34,13 +35,16 @@
   -o-transform: translateY(0);
   transform: translateY(0);
 }
+
 .c-panel.c-panel-template-1 .widget-body {
   padding-top: 16px;
   padding-bottom: 18px;
 }
+
 .c-panel.c-panel-template-1 .widget-item-container[data-icon=true] .widget-item-count-container {
   width: 24px;
 }
+
 .c-panel.c-panel-template-1 .widget-item {
   position: relative;
   display: block;
@@ -49,6 +53,7 @@
   padding-left: 8px;
   padding-right: 8px;
 }
+
 .c-panel.c-panel-template-1 .widget-item-count-container {
   position: relative;
   font-size: 0;
@@ -56,6 +61,7 @@
   margin-right: auto;
   z-index: 2;
 }
+
 .c-panel.c-panel-template-1 .widget-item-count {
   position: absolute;
   display: inline-block;
@@ -83,6 +89,7 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 .c-panel.c-panel-template-1 .widget-item-count[data-state=active] {
   opacity: 1;
   pointer-events: all;
@@ -91,6 +98,7 @@
   -ms-user-select: all;
   user-select: all;
 }
+
 .c-panel.c-panel-template-1 .widget-item-icon {
   position: relative;
   display: block;
@@ -102,9 +110,11 @@
   background-position: center;
   z-index: 1;
 }
-.c-panel.c-panel-template-1 .widget-item-icon + .widget-item-name {
+
+.c-panel.c-panel-template-1 .widget-item-icon+.widget-item-name {
   margin-top: 4px;
 }
+
 .c-panel.c-panel-template-1 .widget-item-name {
   position: relative;
   display: block;
@@ -113,17 +123,21 @@
   color: #404040;
   z-index: 1;
 }
+
 .c-panel.c-panel-template-1[data-svg-mode=fill] .widget-item-icon svg {
   fill: #808080;
 }
+
 .c-panel.c-panel-template-1[data-svg-mode=stroke] .widget-item-icon svg {
   stroke: #808080;
 }
+
 @media all and (max-width: 768px) {
   .c-panel.c-panel-template-1 {
     display: block;
   }
 }
+
 @media all and (max-width: 450px) {
   .c-panel.c-panel-template-1 .widget-item-name {
     word-break: break-all;
@@ -134,6 +148,18 @@
     overflow: hidden;
     max-height: 12px;
   }
+}
+
+div.widget-body a.phone-text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #2d2d2d;
+  font-weight: bold;
+  margin: auto;
+}
+
+div.scrollbar.scrollbar-inner.scroll-content div.widget-body {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -60,13 +60,16 @@ $arVisual = $arResult['VISUAL'];
             ]) ?>
                 <?php foreach ($arResult['ITEMS'] as $arItem) { ?>
                 <?php
+                    $arrUrl = explode('/', $arItem['DETAIL_PAGE_URL']);
+                    $sLink = "/" . $arrUrl[1] . "/" . "osveshchenie" . "/" . $arrUrl[2] . "/";
+
                     $sId = $sTemplateId.'_'.$arItem['ID'];
                     $sAreaId = $this->GetEditAreaId($sId);
                     $this->AddEditAction($sId, $arItem['EDIT_LINK']);
                     $this->AddDeleteAction($sId, $arItem['DELETE_LINK']);
 
                     $sName = $arItem['NAME'];
-                    $sLink = $arItem['DETAIL_PAGE_URL'];
+                    // $sLink = $arItem['DETAIL_PAGE_URL'];
                     $sPrice = $arItem['DATA']['PRICE']['BASE']['DISPLAY'];
                     $sPriceOld = $arItem['DATA']['PRICE']['OLD']['DISPLAY'];
 

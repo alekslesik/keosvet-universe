@@ -41,13 +41,12 @@
     color: #ababab;
 }
 .widget.c-staff.c-staff-template-1 .widget-element-icons {
-    font-size: 0;
+    font-size: 14px;
     max-width: 200px;
     margin: auto;
 }
 .widget.c-staff.c-staff-template-1 .widget-element-icon-wrap {
     text-align: center;
-    padding-top: 10px;
 }
 .widget.c-staff.c-staff-template-1 .widget-element-icon {
     font-size: 24px;

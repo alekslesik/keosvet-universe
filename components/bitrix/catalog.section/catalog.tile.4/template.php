@@ -29,7 +29,7 @@ if ($bBase)
     CJSCore::Init(array('currency'));
 
 $arNavigation = !empty($arResult['NAV_RESULT']) ? [
-    'NavPageCount' => $arResult['NAV_RESULT']->NavPageCount,
+    'NavPageCount' => '1',
     'NavPageNomer' => $arResult['NAV_RESULT']->NavPageNomer,
     'NavNum' => $arResult['NAV_RESULT']->NavNum
 ] : [
@@ -124,6 +124,56 @@ include(__DIR__ . '/parts/sku.php');
     ]
 ]) ?>
 <?php foreach ($arResult['ITEMS'] as $arItem) {
+
+    $isShowInCatalog = "";
+
+    $showInCatalogProp = "SHOW_IN_CATALOG";
+
+    $powerCode = "MOSHNOSTY_VT";
+    $lumenCode = "SVETOVOY_POTOK_LM";
+    $ipCode = "STEPENY_ZASHITY_IP";
+    $rulerCode = "GABARITNYE_RAZMERY";
+
+
+    $element = CIBlockElement::GetByID($arItem['ID'])->GetNextElement();
+
+    if ($element) {
+        // Получаем массив свойств элемента
+        $properties = $element->GetProperties();
+
+        // Поиск свойства по коду
+        foreach ($properties as $property) {
+            if ($property['CODE'] == $showInCatalogProp) {
+                $isShowInCatalog = $property["VALUE"];
+            }
+
+            switch ($property["CODE"]) {
+                case $powerCode:
+                    $powerValue = $property["VALUE"];
+                    $powerName = $property["NAME"];
+                    break;
+                case $lumenCode:
+                    $lumenValue = $property["VALUE"];
+                    $lumenName = $property["NAME"];
+                    break;
+                case $ipCode:
+                    $ipValue = $property["VALUE"];
+                    $ipName = $property["NAME"];
+                    break;
+                case $rulerCode:
+                    $rulerValue = $property["VALUE"];
+                    $rulerName = $property["NAME"];
+                    break;
+                default:
+                    break;
+            }
+        }
+    } else break;
+
+    if ($isShowInCatalog == "") {
+        continue;
+    }
+
 
     $sId = $sTemplateId . '_' . $arItem['ID'];
     $sAreaId = $this->GetEditAreaId($sId);
@@ -264,47 +314,47 @@ include(__DIR__ . '/parts/sku.php');
 
             <div class="section-main-element-param">
                 <?php
-                // ID элемента инфоблока
-                $elementId = $arItem['ID'];
+                // // ID элемента инфоблока
+                // $elementId = $arItem['ID'];
 
-                // Код свойства
-                $powerCode = "MOSHNOSTY_VT";
-                $lumenCode = "SVETOVOY_POTOK_LM";
-                $ipCode = "STEPENY_ZASHITY_IP";
-                $rulerCode = "GABARITNYE_RAZMERY";
+                // // Код свойства
+                // $powerCode = "MOSHNOSTY_VT";
+                // $lumenCode = "SVETOVOY_POTOK_LM";
+                // $ipCode = "STEPENY_ZASHITY_IP";
+                // $rulerCode = "GABARITNYE_RAZMERY";
 
-                // Получаем объект элемента инфоблока
-                // CModule::IncludeModule("iblock");
-                $element = CIBlockElement::GetByID($elementId)->GetNextElement();
+                // // Получаем объект элемента инфоблока
+                // // CModule::IncludeModule("iblock");
+                // $element = CIBlockElement::GetByID($elementId)->GetNextElement();
 
-                if ($element) {
-                    // Получаем массив свойств элемента
-                    $properties = $element->GetProperties();
+                // if ($element) {
+                //     // Получаем массив свойств элемента
+                //     $properties = $element->GetProperties();
 
-                    // Поиск свойства по коду
-                    foreach ($properties as $property) {
-                        switch ($property["CODE"]) {
-                            case $powerCode:
-                                $powerValue = $property["VALUE"];
-                                $powerName = $property["NAME"];
-                                break;
-                            case $lumenCode:
-                                $lumenValue = $property["VALUE"];
-                                $lumenName = $property["NAME"];
-                                break;
-                            case $ipCode:
-                                $ipValue = $property["VALUE"];
-                                $ipName = $property["NAME"];
-                                break;
-                            case $rulerCode:
-                                $rulerValue = $property["VALUE"];
-                                $rulerName = $property["NAME"];
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                } else break;
+                //     // Поиск свойства по коду
+                //     foreach ($properties as $property) {
+                //         switch ($property["CODE"]) {
+                //             case $powerCode:
+                //                 $powerValue = $property["VALUE"];
+                //                 $powerName = $property["NAME"];
+                //                 break;
+                //             case $lumenCode:
+                //                 $lumenValue = $property["VALUE"];
+                //                 $lumenName = $property["NAME"];
+                //                 break;
+                //             case $ipCode:
+                //                 $ipValue = $property["VALUE"];
+                //                 $ipName = $property["NAME"];
+                //                 break;
+                //             case $rulerCode:
+                //                 $rulerValue = $property["VALUE"];
+                //                 $rulerName = $property["NAME"];
+                //                 break;
+                //             default:
+                //                 break;
+                //         }
+                //     }
+                // } else break;
                 ?>
 
                 <div class="element-param">

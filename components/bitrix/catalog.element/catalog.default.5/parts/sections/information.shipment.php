@@ -33,8 +33,8 @@ $fGetFileNameWOExtension = function ($fileName) {
     ) ?>
 <br>
 
-<br>
 
+<br>
 <div class="catalog-element-documents-item-container">
     <div class="intec-grid intec-grid-wrap intec-grid-a-v-stretch">
         <?php foreach ($arFields['IES']['VALUES'] as $arDocument) { ?>

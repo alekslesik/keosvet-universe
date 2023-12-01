@@ -65,10 +65,6 @@ $arFields = [
         'SHOW' => false,
         'VALUES' => []
     ],
-    'IES' => [
-        'SHOW' => true,
-        'VALUES' => []
-    ],
     'OFFERS' => []
 ];
 $arProperty = [];

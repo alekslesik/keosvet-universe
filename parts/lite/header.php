@@ -158,7 +158,8 @@ use intec\template\Properties;
 
                     $APPLICATION->IncludeComponent('bitrix:main.include', '.default', [
                         'AREA_FILE_SHOW' => 'file',
-                        'PATH' => SITE_DIR.'include/header/title.php'
+                        // 'PATH' => SITE_DIR.'include/header/title.php'
+                        'PATH' => SITE_DIR. 'local/templates/universe_s1/parts/lite/include/header/title.php'
                     ], false, ['HIDE_ICONS' => 'Y']);
 
                     echo Html::endTag('div');

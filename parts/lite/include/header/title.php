@@ -9,7 +9,8 @@
 <div class="intec-content">
     <div class="intec-content-wrapper">
         <h1 id="pagetitle">
-            <?php $APPLICATION->ShowTitle(false) ?>
+            <div id="pagetitle_main_header"><?php $APPLICATION->ShowTitle(false) ?></div>
+            <div id="pagetitle_add_header">&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </h1>
     </div>
 </div>

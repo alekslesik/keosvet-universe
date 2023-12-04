@@ -1,4 +1,55 @@
 <?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
+
+<?php if ($arResult["PROPERTIES"]["EL_MAIN_HEADER"]["VALUE"] !== "" && $arResult["PROPERTIES"]["EL_MAIN_HEADER"]["VALUE"] !== null) { ?>
+    <?php $main_header = $arResult["PROPERTIES"]["EL_MAIN_HEADER"]["VALUE"]; ?>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Находим элемент с id "pagetitle"
+            var pageTitleMain = document.getElementById("pagetitle_main_header");
+
+            // Заменяем содержимое элемента
+            if (pageTitleMain) {
+                pageTitleMain.innerHTML = "<?php echo CUtil::JSEscape($main_header); ?>"; // Используем CUtil::JSEscape для корректного экранирования
+            }
+        });
+    </script>
+<?php } ?>
+
+<?php if ($arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"] !== "" && $arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"] !== null) { ?>
+    <?php $add_header = $arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"]; ?>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Находим элемент с id "pagetitle_add_header"
+            var pageTitleAdd = document.getElementById("pagetitle_add_header");
+
+            // Проверяем, найден ли элемент, прежде чем обновить его содержимое
+            if (pageTitleAdd) {
+                // Создаем новый HTML-код с учетом значения из PHP и добавляем &nbsp;&nbsp;&nbsp;&nbsp; в начало
+                var newContent = "&nbsp;&nbsp;&nbsp;&nbsp;" + "<?php echo CUtil::JSEscape($add_header); ?>";
+
+                // Заменяем содержимое элемента
+                pageTitleAdd.innerHTML = newContent;
+            }
+        });
+    </script>
+
+<?php } else { ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Находим элемент с id "pagetitle_add_header"
+            var addHeaderElement = document.getElementById("pagetitle_add_header");
+
+            // Проверяем, найден ли элемент, прежде чем его скрыть
+            if (addHeaderElement) {
+                // Скрываем элемент
+                addHeaderElement.style.display = "none";
+            }
+        });
+    </script>
+<?php } ?>
+
 <?php
 
 use Bitrix\Main\Loader;
@@ -20,6 +71,7 @@ $this->setFrameMode(true);
 Loc::loadMessages(__FILE__);
 
 $sTemplateId = Html::getUniqueId(null, Component::getUniqueId($this));
+
 
 
 if (Loader::includeModule('catalog') &&

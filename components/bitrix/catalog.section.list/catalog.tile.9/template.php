@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 
 ?>
 
-<?php if ($arResult["SECTION"]["UF_MAIN_HEADER"] !== null) { ?>
+<?php if ($arResult["SECTION"]["UF_MAIN_HEADER"] !== null && $arResult["SECTION"]["UF_MAIN_HEADER"] !== "") { ?>
     <?php $main_header = $arResult["SECTION"]["UF_MAIN_HEADER"]; ?>
 
     <script>
@@ -31,7 +31,7 @@ $this->setFrameMode(true);
     </script>
 <?php } ?>
 
-<?php if ($arResult["SECTION"]["UF_ADD_HEADER"] !== null) { ?>
+<?php if ($arResult["SECTION"]["UF_ADD_HEADER"] !== null && $arResult["SECTION"]["UF_ADD_HEADER"] !== "") { ?>
     <?php $add_header = $arResult["SECTION"]["UF_ADD_HEADER"]; ?>
 
     <script>

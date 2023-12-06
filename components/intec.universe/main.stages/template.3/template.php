@@ -18,7 +18,7 @@ $sTemplateId = Html::getUniqueId(null, Component::getUniqueId($this));
 $arBlocks = $arResult['BLOCKS'];
 $arVisual = $arResult['VISUAL'];
 
-$bHide = count($arResult['ITEMS']) > 3;
+$bHide = count($arResult['ITEMS']) > 5;
 
 $iCounter = 0;
 
@@ -77,7 +77,7 @@ $iCounter = 0;
                             'class' => 'widget-item',
                             'data' => [
                                 'role' => 'item',
-                                'action' => $bHide && $iCounter > 3 ? 'hide': 'show'
+                                'action' => $bHide && $iCounter > 5 ? 'hide': 'show'
                             ]
                         ]) ?>
                             <div class="widget-item-wrap intec-grid intec-grid-1024-wrap">
@@ -120,7 +120,7 @@ $iCounter = 0;
                     <?php } ?>
                 <?= Html::endTag('div') ?>
             <?= Html::endTag('div') ?>
-            <?php if ($bHide && $iCounter > 3) { ?>
+            <?php if ($bHide && $iCounter > 5) { ?>
                 <div class="widget-button-wrap">
                     <div class="widget-button intec-ui intec-ui-control-button intec-ui-mod-round-half intec-ui-scheme-current intec-ui-size-5 intec-ui-mod-transparent" data-role="button"></div>
                 </div>
@@ -129,4 +129,4 @@ $iCounter = 0;
         </div>
     </div>
 </div>
-<?php if ($bHide && $iCounter > 3) include(__DIR__ . '/parts/script.php') ?>
+<?php if ($bHide && $iCounter > 5) include(__DIR__ . '/parts/script.php') ?>

@@ -16,7 +16,7 @@
     </script>
 <?php } ?>
 
-<?php if ($arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"] !== "" && $arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"] !== null) { ?>
+<?php if ($arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"] !== "" && $arResult["PROPERTIES"]["EL_MAIN_HEADER"]["VALUE"] !== null) { ?>
     <?php $add_header = $arResult["PROPERTIES"]["EL_ADD_HEADER"]["VALUE"]; ?>
 
     <script>

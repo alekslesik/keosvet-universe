@@ -46,6 +46,9 @@ $APPLICATION->AddBufferContent([
 $page->execute(['state' => 'loaded']);
 $part = Constructor::isLite() ? 'lite' : 'base';
 
+$p = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+
 ?><!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID?>">
     <head>

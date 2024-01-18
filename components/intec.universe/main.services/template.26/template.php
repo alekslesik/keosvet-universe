@@ -83,10 +83,15 @@ $sTag = $arVisual['LINK']['USE'] ? 'a' : 'div'
                             ],
                             'id' => $sAreaId
                         ]) ?>
+
+                            <?php
+                                $modifiedUrl = preg_replace("/\/[0-9]+\/$/", "/", $arItem['DETAIL_PAGE_URL']);
+                            ?>
+
                             <div class="intec-grid intec-grid-wrap intec-grid-a-v-start intec-grid-i-16">
                                 <div class="intec-grid-item-auto intec-grid-item-550-1">
                                     <?= Html::beginTag($sTag, [
-                                        'href' => $arVisual['LINK']['USE'] ? $arItem['DETAIL_PAGE_URL'] : null,
+                                        'href' => $arVisual['LINK']['USE'] ? $modifiedUrl : null,
                                         'class' => [
                                             'widget-item-picture',
                                             'intec-image-effect'
@@ -110,7 +115,7 @@ $sTag = $arVisual['LINK']['USE'] ? 'a' : 'div'
                                         </a>
                                     <?php } ?>
                                     <?= Html::tag($sTag, $arItem['NAME'], [
-                                        'href' => $arVisual['LINK']['USE'] ? $arItem['DETAIL_PAGE_URL'] : null,
+                                        'href' => $arVisual['LINK']['USE'] ? $modifiedUrl : null,
                                         'class' => [
                                             'widget-item-name',
                                             'intec-cl-text-hover'

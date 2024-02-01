@@ -21,7 +21,7 @@ $this->setFrameMode(true);
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Находим элемент с id "pagetitle"
-            var pageTitleMain = document.getElementById("pagetitle_main_header");
+            var pageTitleMain = document.getElementById("pagetitle pagetitle_main_header");
 
             // Заменяем содержимое элемента
             if (pageTitleMain) {

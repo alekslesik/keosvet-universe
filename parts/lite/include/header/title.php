@@ -22,7 +22,7 @@
 	content: url('/local/templates/universe_s1/images/graph_element.png');
 	position: absolute;
 	/* top: 50%; */
-	transform: translateY(-10%);
+	transform: translateY(-18%);
 	margin-left: -30px;
 }
 

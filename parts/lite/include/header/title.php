@@ -12,3 +12,23 @@
         <h2 id="pagetitle_add_header"></h2>
     </div>
 </div>
+
+<style>
+    .intec-content-wrapper {
+        position: relative; /* Создает контекст позиционирования */
+    }
+
+    #pagetitle_add_header::before {
+	content: url('/local/templates/universe_s1/images/graph_element.png');
+	position: absolute;
+	/* top: 50%; */
+	transform: translateY(-10%);
+	margin-left: -30px;
+}
+
+    #pagetitle_add_header {
+        padding-left: 30px; /* Добавляет отступ слева, чтобы текст не налезал на изображение */
+        font-size: 1.5em;
+
+    }
+</style>

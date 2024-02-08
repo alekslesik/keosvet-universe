@@ -42,7 +42,7 @@ $this->setFrameMode(true);
             // Проверяем, найден ли элемент, прежде чем обновить его содержимое
             if (pageTitleAdd) {
                 // Создаем новый HTML-код с учетом значения из PHP и добавляем &nbsp;&nbsp;&nbsp;&nbsp; в начало
-                var newContent = "&nbsp;&nbsp;&nbsp;&nbsp;" + "<?php echo CUtil::JSEscape($add_header); ?>";
+                var newContent = "<?php echo CUtil::JSEscape($add_header); ?>";
 
                 // Заменяем содержимое элемента
                 pageTitleAdd.innerHTML = newContent;

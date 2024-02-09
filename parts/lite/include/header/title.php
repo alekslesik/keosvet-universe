@@ -15,20 +15,27 @@
 
 <style>
     .intec-content-wrapper {
-        position: relative; /* Создает контекст позиционирования */
+        position: relative;
     }
 
     #pagetitle_add_header::before {
-	content: url('/local/templates/universe_s1/images/graph_element.png');
-	position: absolute;
-	/* top: 50%; */
-	transform: translateY(-18%);
-	margin-left: -30px;
-}
+        content: url('/local/templates/universe_s1/images/graph_element.png');
+        position: absolute;
+        transform: translateY(-18%);
+        margin-left: -30px;
+    }
 
     #pagetitle_add_header {
-        padding-left: 30px; /* Добавляет отступ слева, чтобы текст не налезал на изображение */
+        padding-left: 30px;
         font-size: 1.5em;
 
+    }
+
+    @media all and (max-width: 430px) {
+        #pagetitle_add_header {
+            padding-left: 30px;
+            font-size: 1.3em;
+            margin-bottom: 0px;
+        }
     }
 </style>

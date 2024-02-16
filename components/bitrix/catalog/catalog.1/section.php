@@ -272,31 +272,31 @@ if ($arTags['SHOW']['MOBILE'] && $bSeo) {
             ]
         ]) ?>
 
-        <div class="catalog-section-form">
+        <!-- <div class="catalog-section-form">
             <? $APPLICATION->IncludeComponent(
-	"intec.universe:main.form", 
-	"template.1", 
-	array(
-		"COMPONENT_TEMPLATE" => "template.1",
-		"ID" => "1",
-		"NAME" => "Заказать звонок",
-		"SETTINGS_USE" => "N",
-		"LAZYLOAD_USE" => "N",
-		"CONSENT" => "",
-		"TEMPLATE" => ".default",
-		"TITLE" => "Подготовка проекта - расчет освещения, подбор светильников по параметрам",
-		"DESCRIPTION_SHOW" => "N",
-		"BUTTON_TEXT" => "Получить проект бесплатно",
-		"THEME" => "dark",
-		"VIEW" => "left",
-		"BACKGROUND_COLOR" => "#f4f4f4",
-		"BACKGROUND_IMAGE_USE" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "0"
-	),
-	false
-); ?>
-        </div>
+                "intec.universe:main.form",
+                "template.1",
+                array(
+                    "COMPONENT_TEMPLATE" => "template.1",
+                    "ID" => "1",
+                    "NAME" => "Заказать звонок",
+                    "SETTINGS_USE" => "N",
+                    "LAZYLOAD_USE" => "N",
+                    "CONSENT" => "",
+                    "TEMPLATE" => ".default",
+                    "TITLE" => "Подготовка проекта - расчет освещения, подбор светильников по параметрам",
+                    "DESCRIPTION_SHOW" => "N",
+                    "BUTTON_TEXT" => "Получить проект бесплатно",
+                    "THEME" => "dark",
+                    "VIEW" => "left",
+                    "BACKGROUND_COLOR" => "#f4f4f4",
+                    "BACKGROUND_IMAGE_USE" => "N",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "0"
+                ),
+                false
+            ); ?>
+        </div> -->
 
         <?php if ($arColumns['SHOW']) { ?>
             <div class="catalog-content-left intec-content-left">
@@ -342,6 +342,31 @@ if ($arTags['SHOW']['MOBILE'] && $bSeo) {
             </div>
             <div class="catalog-content-right intec-content-right">
                 <div class="catalog-content-right-wrapper intec-content-right-wrapper" data-role="catalog.content">
+                    <div class="catalog-section-form">
+                        <? $APPLICATION->IncludeComponent(
+                            "intec.universe:main.form",
+                            "template.1",
+                            array(
+                                "COMPONENT_TEMPLATE" => "template.1",
+                                "ID" => "1",
+                                "NAME" => "Заказать звонок",
+                                "SETTINGS_USE" => "N",
+                                "LAZYLOAD_USE" => "N",
+                                "CONSENT" => "",
+                                "TEMPLATE" => ".default",
+                                "TITLE" => "Подготовка проекта - расчет освещения, подбор светильников по параметрам",
+                                "DESCRIPTION_SHOW" => "N",
+                                "BUTTON_TEXT" => "Получить проект бесплатно",
+                                "THEME" => "dark",
+                                "VIEW" => "left",
+                                "BACKGROUND_COLOR" => "#f4f4f4",
+                                "BACKGROUND_IMAGE_USE" => "N",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "0"
+                            ),
+                            false
+                        ); ?>
+                    </div>
                 <?php } ?>
                 <?php if ($sLayout === '1') { ?>
                     <?php if (!$arTags['SHOWED']['DESKTOP'] && $arTags['POSITION']['DESKTOP'] == 'top') { ?>

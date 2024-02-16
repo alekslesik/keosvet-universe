@@ -1044,4 +1044,18 @@
   margin-bottom: 45px;
 }
 
+@media (max-width: 767px) {
+  .widget.c-form.c-form-template-1 [data-view] .widget-form-buttons {
+    margin-top: 0px !important;
+  }
+
+  .widget-form-name {
+    display: none;
+  }
+
+  .widget-form-body {
+    background-color: #ffffff !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

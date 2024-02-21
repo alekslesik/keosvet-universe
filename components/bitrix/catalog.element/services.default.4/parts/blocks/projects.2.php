@@ -9,11 +9,13 @@ use intec\core\helpers\ArrayHelper;
  * @var array $arBlock
  */
 
+$arBlock["PARAMETERS"]["COLUMNS"] = "4";
+
 ?>
 <div class="catalog-element-projects-2">
     <?php $APPLICATION->IncludeComponent(
         'intec.universe:main.projects',
-        'template.4',
+        'template.5',
         ArrayHelper::merge($arBlock['PARAMETERS'], [
             'IBLOCK_TYPE' => $arBlock['IBLOCK']['TYPE'],
             'IBLOCK_ID' => $arBlock['IBLOCK']['ID'],
